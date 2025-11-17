@@ -69,15 +69,15 @@
     * 購物車列表會與錢包餘額進行即時比較。
       <img width="907" height="568" alt="image" src="https://github.com/user-attachments/assets/974159ab-e8cf-4d6c-81dd-7057a3b3775e" />
 
-* **個人資料(ProFile):**
-    * 在 `buyer-profile.html` 修改個人資料。
-    <img width="1223" height="708" alt="image" src="https://github.com/user-attachments/assets/07846e89-7c81-4018-8b85-ab96606acf40" />
-
 
 * **電子錢包 (Wallet):**
     * 在 `cart.html` 頁面查看錢包餘額。
     * 支援「模擬儲值」(`POST /api/wallet/topup`)。
     <img width="701" height="494" alt="image" src="https://github.com/user-attachments/assets/e2e2fe53-e140-4ef6-86cc-8158bc7995ed" />
+    
+* **個人資料(ProFile):**
+    * 在 `buyer-profile.html` 修改個人資料。
+    <img width="1223" height="708" alt="image" src="https://github.com/user-attachments/assets/07846e89-7c81-4018-8b85-ab96606acf40" />
 
 * **結帳 (Checkout):**
     * **[核心架構] 多賣家拆單:** 結帳時 (`POST /api/orders/checkout`)，後端會自動偵測購物車中來自不同賣家的商品，並將其**自動拆分**為多張獨立的 `OrderPO`。
@@ -238,5 +238,6 @@
 ## 📄 授權 (License)
 
 本專案採用 MIT 授權。
+
 
 
