@@ -148,21 +148,30 @@
 
 本專案圍繞著 `users`, `products`, 和 `orders` 三大核心實體構建。
 
-<img width="950" height="961" alt="ER" src="https://github.com/user-attachments/assets/500bd803-4ce9-44a3-9aad-3af089f1ac69" />
+<img width="950" height="961" alt="ER" src="https://github.com/user-attachments/assets/3cca982f-e9e1-4c6e-8489-1a48a731dd23" />
 
 
-### 核心關聯說明：
-* **User (使用者):** * `users` 是所有角色的中心，透過 `role` 欄位區分「買家」和「賣家」。
-    * 一個 `users` (賣家) 可以有多個 `products` (一對多)。
-    * 一個 `users` (買家) 可以有多個 `orders` (一對多)。
-    * 每個 `users` 都有一個 `wallets` (一對一)。
-    * `users` (賣家) 會有一個 `bank_accounts` (一對一)。
-* **Order (訂單):**
-    * `orders` (訂單) 包含一個 `buyer_id` 和一個 `seller_id` (實現拆單)。
-    * 一張 `orders` 包含多個 `order_items` (一對多)。
-* **Rating (評價):**
-    * `product_ratings` (評價) **不**是直接關聯 `products`。
-    * 它關聯 `order_items` (訂單項目) (一對一)，以確保只有購買過的買家才能評價。
+### 資料表介紹 (Table Definitions)
+
+#### 1. 使用者 & 認證 (User & Auth)
+* **`users`**: 核心使用者表。`role` 欄位 ('BUYER' / 'SELLER') 用於區分角色。
+* **`password_reset_tokens`**: 存放「忘記密碼」時產生的一次性 Token。關聯 `user_id`。
+
+#### 2. 商品 & 分類 (Product & Catalog)
+* **`categories`**: 商品分類表。`parent_category_id` 欄位（關聯自己）用於實現**樹狀**分類結構。
+* **`products`**: 商品主表。關聯 `seller_id` (賣家) 和 `category_id` (分類)。
+* **`product_ratings`**: 商品評價表。(關鍵) 它**不**直接關聯 `products`，而是關聯 `order_item_id`，以確保只有**已購買**的買家才能評價。
+
+#### 3. 購物車 & 訂單 (Cart & Order)
+* **`carts`**: 購物車主表。每個買家 (`user_id`) 擁有一個購物車 (一對一)。
+* **`cart_items`**: 購物車項目表。存放當前在購物車中的商品 (`product_id`) 和數量。
+* **`orders`**: 訂單主表。(關鍵) 包含 `buyer_id` 和 `seller_id`，用於實現「多賣家拆單」。
+* **`order_items`**: 訂單項目表。這是訂單成立時的「商品快照」，儲存了當時的 `price_per_unit` (單價快照)，確保歷史價格不會變動。
+
+#### 4. 金流 & 帳戶 (Wallet & Finance)
+* **`wallets`**: 電子錢包。每個 `user_id` (無論買家或賣家) 都有一個錢包 (一對一)，用於儲存 `balance` (餘額)。
+* **`wallet_transactions`**: 錢包交易紀錄。`wallets` 的流水帳，記錄 `TOPUP`, `PAYMENT` (支付), `WITHDRAWAL` (提款) 等所有變動。
+* **`bank_accounts`**: 賣家銀行帳戶。`user_id` (賣家) 用於提款的銀行資料 (一對一)。
 
 ---
 
@@ -187,17 +196,17 @@
     * 更改 `spring.datasource.url`, `username`, `password` 以符合您本地的 MySQL 設定。
 3.  **啟動後端:**
     * 找到並執行 `BigworkApplication.java` (主程式)。
-    * 伺服器將運行在 `http://localhost:8080`。
+    * 伺服器將運行在 `http://localhost:8080`跟`http://localhost:5500`。
 
 ### 2. 前端 (HTML/JS)
 1.  **不需安裝:** 這是一個靜態網頁專案。
 2.  **開啟檔案:**
     * 在 VS Code 中打開 `frontend-html` 資料夾。
-    * 在 `welcome.html` (或 `index.html`) 上按右鍵，選擇 `Open with Live Server`。
+    * 在 `index.html` 上按右鍵，選擇 `Open with Live Server`。
     * （推薦：使用 `Live Server` 來避免 CORS 跨域問題）。
 
 3.  **開始使用:**
-    * 您的瀏覽器將自動打開 `http://127.0.0.1:5500/html/welcome.html`。
+    * 您的瀏覽器將自動打開 `http://127.0.0.1:5500/html/index.html`。
     * 點擊「註冊」並分別建立一個 `BUYER` 和一個 `SELLER` 帳號即可開始測試所有功能。
 
 ---
