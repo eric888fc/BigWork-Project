@@ -181,7 +181,7 @@
 * Java JDK (建議 17 或 21)
 * Apache Maven
 * MySQL (或相容的資料庫)
-* Eclipse (或 IntelliJ IDEA)
+* Eclipse (安裝lombok)
 * VS Code (或任何用於前端的編輯器，並安裝 `Live Server` 擴充功能)
 
 ### 1. 後端 (Spring Boot)
@@ -233,3 +233,4 @@
 ## 📄 授權 (License)
 
 本專案採用 MIT 授權。
+
