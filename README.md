@@ -69,6 +69,11 @@
     * 購物車列表會與錢包餘額進行即時比較。
       <img width="907" height="568" alt="image" src="https://github.com/user-attachments/assets/974159ab-e8cf-4d6c-81dd-7057a3b3775e" />
 
+* **個人資料(ProFile):**
+    * 在 `buyer-profile.html` 修改個人資料。
+    <img width="1223" height="708" alt="image" src="https://github.com/user-attachments/assets/07846e89-7c81-4018-8b85-ab96606acf40" />
+
+
 * **電子錢包 (Wallet):**
     * 在 `cart.html` 頁面查看錢包餘額。
     * 支援「模擬儲值」(`POST /api/wallet/topup`)。
@@ -233,4 +238,5 @@
 ## 📄 授權 (License)
 
 本專案採用 MIT 授權。
+
 
