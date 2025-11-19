@@ -201,7 +201,7 @@
     * 更改 `spring.datasource.url`, `username`, `password` 以符合您本地的 MySQL 設定。
 3.  **啟動後端:**
     * 找到並執行 `BigworkApplication.java` (主程式)。
-    * 伺服器將運行在 `http://localhost:8080`跟`http://localhost:5500`。
+    * 伺服器將運行在 `http://localhost:8080`。
 
 ### 2. 前端 (HTML/JS)
 1.  **不需安裝:** 這是一個靜態網頁專案。
@@ -249,6 +249,7 @@
 ## 📄 授權 (License)
 
 本專案採用 MIT 授權。
+
 
 
 
