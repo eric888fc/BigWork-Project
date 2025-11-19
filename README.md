@@ -213,7 +213,18 @@
 3.  **開始使用:**
     * 您的瀏覽器將自動打開 `http://127.0.0.1:5500/html/index.html`。
     * 點擊「註冊」並分別建立一個 `BUYER` 和一個 `SELLER` 帳號即可開始測試所有功能。
+### 3. JAR 
+1.  **新增資料夾:** 把jar跟uploads放入資料夾中。
+    <img width="713" height="233" alt="image" src="https://github.com/user-attachments/assets/ae2858bc-9b9f-4108-a064-e5f7554e8f9d" />
 
+2.  **開啟cmd:**
+    * 在cmd中cd 到資料夾路徑。
+    * 在 cmd上執行 `java -jar bigwork-0.0.1-SNAPSHOT.jar`。
+    <img width="622" height="166" alt="image" src="https://github.com/user-attachments/assets/65343b9b-5779-4eb7-a65f-b0441af1fe1e" />
+
+3.  **開始使用:**
+    * 在您的瀏覽器輸入 `http://localhost:8080/` ，就可以開啟角色選擇畫面了。
+    <img width="1918" height="941" alt="image" src="https://github.com/user-attachments/assets/1a35b2f0-72d6-47a2-a797-51dc6041cfb2" />
 ---
 
 ## 🏛️ 專案架構 (Architecture)
@@ -238,6 +249,7 @@
 ## 📄 授權 (License)
 
 本專案採用 MIT 授權。
+
 
 
 
