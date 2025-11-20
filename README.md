@@ -145,7 +145,7 @@
 | **前端 (Frontend)** | Vanilla JavaScript (ES6+ Async/Await, Fetch API), HTML5, CSS3 |
 | **資料庫 (Database)** | MySQL |
 | **驗證 (Validation)** | `jakarta.validation` ( ` @Valid`, `@Pattern` ) |
-| **Java 核心** | POJO (實體), VO/DTO (資料傳輸), DAO (儲存庫), Service, Controller 分層架構 |
+| **Java 核心** | PO(資料表), VO (JSON接收/輸出), DAO (儲存庫), Service, Controller 分層架構 |
 
 ---
 
@@ -251,6 +251,7 @@
 ## 📄 授權 (License)
 
 本專案採用 MIT 授權。
+
 
 
 
