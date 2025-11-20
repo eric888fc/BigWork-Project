@@ -233,13 +233,15 @@
 
 | 路徑 | 控制器 | 目的 |
 | :--- | :--- | :--- |
-| `/api/auth/**` | `AuthController` | 處理所有登入、註冊和 Token |
-| `/api/public/**` | `PublicProductController` | 公開的商品和評價查詢 |
-| `/api/profile/me` | `ProfileController` | （需登入）獲取/更新個人資料 |
+| `/api/auth/**` | `AuthController` | 處理所有登入、註冊和 Token 以及忘記/重設密碼|
+| `/api/public/products/**` | `PublicProductController` | (公開)商品和評價查詢 |
+| `/api/public/categories` | `CategoryController` | （公開） 獲取「樹狀」商品分類 |
+| `/api/profile/**` | `UserProfileController` | （需登入）獲取/更新個人資料 |
 | `/api/wallet/**` | `WalletController` | （需登入）錢包餘額、儲值/提款 |
 | `/api/cart/**` | `CartController` | （買家） 購物車管理 |
 | `/api/orders/**` | `OrderController` | （買家） 結帳與訂單查詢 |
 | `/api/ratings/**` | `RatingController` | （買家） 新增/更新評價 |
+| `/api/products/**` | `ProductController` | (賣家)上架/修改/刪除商品 |
 | `/api/seller/account` | `BankAccountController` | （賣家） 收款帳戶管理 |
 | `/api/seller/orders/**` | `SellerOrderController` | （賣家） 查詢收到的訂單 |
 | `/api/seller/ratings/**` | `SellerRatingController` | （賣家） 查詢收到的評價 |
@@ -249,6 +251,7 @@
 ## 📄 授權 (License)
 
 本專案採用 MIT 授權。
+
 
 
 
